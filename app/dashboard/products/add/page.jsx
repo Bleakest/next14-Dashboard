@@ -1,9 +1,10 @@
 import styles from "../../../ui/dashboard/products/addproduct/addProduct.module.css";
+import {addProduct} from '../../../lib/actions'
 
 const AddProductPage = () => {
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
+      <form action={addProduct} className={styles.form}>
         <input type="text" placeholder="title" name="title" required />
         <select name="cat" id="cat">
           <option value="general">Choose a Category</option>

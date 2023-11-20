@@ -1,4 +1,4 @@
-import { deleteUser } from "../../lib/data";
+import { deleteUser } from "../../lib/actions";
 import { fetchUsers } from "../../lib/data";
 import Pagination from "../../ui/dashboard/pagination/pagination";
 import Search from "../../ui/dashboard/search/search";
@@ -36,8 +36,8 @@ const UsersPage = async ({ searchParams }) => {
               <td>
                 <div className={styles.user}>
                   <Image
-                    src={user.img || "/noavatar.png"}
-                    alt=""
+                    src="/noavatar.png"
+                    alt="userimg"
                     width={40}
                     height={40}
                     className={styles.userImage}
@@ -57,7 +57,7 @@ const UsersPage = async ({ searchParams }) => {
                     </button>
                   </Link>
                   <form action={deleteUser}>
-                    <input type="hidden" name="id" value={(user.id)} />
+                    <input type="hidden" name="id" value={user.id} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
